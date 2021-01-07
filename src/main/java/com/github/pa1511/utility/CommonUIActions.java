@@ -1,4 +1,4 @@
-package utility;
+package com.github.pa1511.utility;
 
 
 import java.awt.event.ActionEvent;

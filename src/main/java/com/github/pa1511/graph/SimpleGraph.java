@@ -1,4 +1,4 @@
-package graph;
+package com.github.pa1511.graph;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -41,13 +41,13 @@ import javax.swing.WindowConstants;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
-import dataModels.DPoint;
-import dataModels.Pair;
-import utility.ResourceLoader;
-import utility.CommonUIActions;
+import com.github.pa1511.utility.CommonUIActions;
+import com.github.pa1511.utility.ResourceLoader;
+import com.github.pa1511.dataModels.DPoint;
+import com.github.pa1511.dataModels.Pair;
 
 /**
- * A simple interactive 2D graph implementation. 
+ * A simple interactive 2D main.java.com.github.pa1511.graph implementation.
  * @author paf
  */
 public class SimpleGraph extends JPanel {
@@ -152,14 +152,14 @@ public class SimpleGraph extends JPanel {
 	}
 	
 	/**
-	 * Indicate can the graph be draged
+	 * Indicate can the main.java.com.github.pa1511.graph be draged
 	 */
 	public void setCanDrag(boolean canDrag) {
 		this.canDrag = canDrag;
 	}
 	
 	/**
-	 * Indicate can the graph be zoomed in/out
+	 * Indicate can the main.java.com.github.pa1511.graph be zoomed in/out
 	 */
 	public void setCanZoomInOut(boolean canZoomInOut) {
 		this.canZoomInOut = canZoomInOut;
@@ -258,7 +258,7 @@ public class SimpleGraph extends JPanel {
 				
 			}
 		}));
-		popupMenu.add(new JMenuItem(new CommonUIActions.SelectFile("Save as PNG",System.getProperty("user.home"),true) {		
+		popupMenu.add(new JMenuItem(new CommonUIActions.SelectFile("Save as PNG",System.getProperty("user.home"),true) {
 			@Override
 			public void doWithSelectedDirectory(File selectedFile) {
 				try {
@@ -303,7 +303,7 @@ public class SimpleGraph extends JPanel {
 
 		setComponentPopupMenu(popupMenu);
 		
-		//TODO: this could be changed to a state pattern to easily expand graph functionality 
+		//TODO: this could be changed to a state pattern to easily expand main.java.com.github.pa1511.graph functionality
 		MouseAdapter mouseInputHandler = new MouseAdapter() {
 			
 			private double startShiftX;
@@ -411,64 +411,64 @@ public class SimpleGraph extends JPanel {
 	}
 
 	/**
-	 * Removes all functions from the graph. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Removes all functions from the main.java.com.github.pa1511.graph. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void clearFunctions(){
 		functions.clear();
 	}	
 	
 	/**
-	 * Removes all points from the graph. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Removes all points from the main.java.com.github.pa1511.graph. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void clearPoints() {
 		points.clear();
 	}
 
 	/**
-	 * Adds the given function to the graph to be plotted. <br/>
+	 * Adds the given function to the main.java.com.github.pa1511.graph to be plotted. <br/>
 	 * The function will be displayed in blue color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addFunction(@Nonnull DoubleUnaryOperator function){
 		addFunction(function, Color.BLUE);
 	}
 
 	/**
-	 * Adds the given function to the graph to be plotted. <br/>
+	 * Adds the given function to the main.java.com.github.pa1511.graph to be plotted. <br/>
 	 * The function will be displayed in the specified color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addFunction(@Nonnull DoubleUnaryOperator function,@Nonnull Color color){
 		functions.add(Pair.of(function, color));
 	}
 
 	/**
-	 * Adds the given point to the graph. <br/>
+	 * Adds the given point to the main.java.com.github.pa1511.graph. <br/>
 	 * This array needs to have a length of 2 or more otherwise adding the point will cause an exception. <br/>
 	 * If the length is larger then 2 then only the 2 first elements are considered. <br/>
 	 * They are considered the x and y coordinate of the point. <br/>
 	 * The point is displayed in red color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addPoint(double[] point) {
 		addPoint(point[0],point[1]);
 	}
 	
 	/**
-	 * Adds the given point to the graph. <br/>
+	 * Adds the given point to the main.java.com.github.pa1511.graph. <br/>
 	 * The point is displayed in red color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addPoint(double x,double y){
 		addPoint(x,y,Color.RED);
 	}
 
 	/**
-	 * Adds the given point to the graph. <br/>
+	 * Adds the given point to the main.java.com.github.pa1511.graph. <br/>
 	 * The point is displayed in the specified color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addPoint(double x,double y,@Nonnull Color color){
 		DPoint point = new DPoint(x, y);
@@ -476,10 +476,10 @@ public class SimpleGraph extends JPanel {
 	}
 
 	/**
-	 * Adds the given point to the graph. <br/>
+	 * Adds the given point to the main.java.com.github.pa1511.graph. <br/>
 	 * The point dimension should be at least 2. <br/>
 	 * The point is displayed in the specified color. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addPoint(DPoint point, Color color){		
 		List<DPoint> groupPoints = points.get(color);
@@ -493,7 +493,7 @@ public class SimpleGraph extends JPanel {
 	
 	/**
 	 * Adds the given points and shows them in the specified color. 
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addPointGroup(List<DPoint> group, Color groupColor){
 		List<DPoint> existingGroupPoints = points.get(groupColor);
@@ -506,39 +506,39 @@ public class SimpleGraph extends JPanel {
 	}
 	
 	/**
-	 * Returns all the points on the graph
+	 * Returns all the points on the main.java.com.github.pa1511.graph
 	 */
 	public Map<Color, List<DPoint>> getPoints() {
 		return points;
 	}
 	
 	/**
-	 * Adds the given shape to the graph. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Adds the given shape to the main.java.com.github.pa1511.graph. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void addShape(IGraphShape graphShape) {
 		shapes.add(graphShape);
 	}
 	
 	/**
-	 * Removes the given shape from the graph. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Removes the given shape from the main.java.com.github.pa1511.graph. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void removeShape(IGraphShape graphShape) {
 		shapes.remove(graphShape);
 	}
 	
 	/**
-	 * Removes all shapes from the graph. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Removes all shapes from the main.java.com.github.pa1511.graph. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void removeAllShapes() {
 		shapes.clear();
 	}
 
 	/**
-	 * Centers the graph around the coordinate system center. <br/>
-	 * The graph <b> WILL NOT </b> automatically repaint. 
+	 * Centers the main.java.com.github.pa1511.graph around the coordinate system center. <br/>
+	 * The main.java.com.github.pa1511.graph <b> WILL NOT </b> automatically repaint.
 	 */
 	public void centralize() {
 		shiftX = 0.5;
@@ -656,7 +656,7 @@ public class SimpleGraph extends JPanel {
 				
 				double relativeY = operator.applyAsDouble(p*maxValueX)/maxValueY;
 				int y = calculateY(yCoordinateStartHeight, relativeY);
-				if(y<-1 || y>height+1)//-1 and +1 so the function line is not visibly connected at the top/bottom of the graph
+				if(y<-1 || y>height+1)//-1 and +1 so the function line is not visibly connected at the top/bottom of the main.java.com.github.pa1511.graph
 					continue;
 				
 				xPoints[i] = x;
@@ -702,7 +702,7 @@ public class SimpleGraph extends JPanel {
 	//PNG save support
 	
     /**
-     * Saves the state of the graph to the given image file. <br/>
+     * Saves the state of the main.java.com.github.pa1511.graph to the given image file. <br/>
      */
     public void save(File image) throws IOException{
         BufferedImage paintImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_3BYTE_BGR);
@@ -756,14 +756,14 @@ public class SimpleGraph extends JPanel {
 	//=============================================================================================================
 	
 	/**
-	 * Launches a window showing the graph. <br/> 
+	 * Launches a window showing the main.java.com.github.pa1511.graph. <br/>
 	 */
 	public void display() {
 		display(500, 150, 800, 800);
 	}
 	
 	/**
-	 * Launches a window showing the graph. <br/> 
+	 * Launches a window showing the main.java.com.github.pa1511.graph. <br/>
 	 * @param x window coordinate
 	 * @param y window coordinate
 	 * @param width of the window
@@ -811,7 +811,7 @@ public class SimpleGraph extends JPanel {
 	
 	//=============================================================================================================
 	/**
-	 * This interface needs to be implemented by a shape which can be plotted on the graph. <br/>
+	 * This interface needs to be implemented by a shape which can be plotted on the main.java.com.github.pa1511.graph. <br/>
 	 * It makes no restrictions on the type of shape only requesting that the draw method is implemented. <br/>
 	 */
 	public static interface IGraphShape {		
@@ -825,7 +825,7 @@ public class SimpleGraph extends JPanel {
 	}
 
 	/**
-	 * This class implements a line to be shown on the graph. <br/>
+	 * This class implements a line to be shown on the main.java.com.github.pa1511.graph. <br/>
 	 */
 	public static class Line implements IGraphShape{
 
@@ -867,7 +867,7 @@ public class SimpleGraph extends JPanel {
 	}
 
 	/**
-	 * This class implements a polyline line to be shown on the graph. <br/>
+	 * This class implements a polyline line to be shown on the main.java.com.github.pa1511.graph. <br/>
 	 */
 	public static class PolyLine implements IGraphShape{
 
@@ -899,7 +899,7 @@ public class SimpleGraph extends JPanel {
 	}
 
 	/**
-	 * This class implements a circle to be shown on the graph. <br/>
+	 * This class implements a circle to be shown on the main.java.com.github.pa1511.graph. <br/>
 	 */
 	public static class Circle implements IGraphShape{
 

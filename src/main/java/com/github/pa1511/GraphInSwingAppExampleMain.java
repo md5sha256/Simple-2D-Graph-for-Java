@@ -1,4 +1,4 @@
-package main;
+package com.github.pa1511;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-import graph.SimpleGraph;
+import com.github.pa1511.graph.SimpleGraph;
 
 public class GraphInSwingAppExampleMain {
 
@@ -23,7 +23,7 @@ public class GraphInSwingAppExampleMain {
 			//Utility
 			Random random = new Random();
 			
-			//Define graph
+			//Define main.java.com.github.pa1511.graph
 			SimpleGraph graph = new SimpleGraph();
 			graph.centralize();
 			
